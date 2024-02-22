@@ -24,10 +24,25 @@ node es2020.mjs
 
 # Functionality
 
-- Uses `mysql2` library to interact with the database.
-- Vanilla SQL dynamic queries V.S. ORM to construct them.
+This is a Blog posts' backend to save/fetch posts to/from a database. You would need to create a relational MySQL database. The endpoints are doing the job of:
 
-To test, use Postman:
+- Create & save post to db
+- Get all posts/only one post
+
+  - Uses `mysql2` library to interact with the database.
+  - Vanilla SQL dynamic queries V.S. of ORM to construct them.
+
+### Using raw SQL in promises triggered on endpoints without an ORM (Object-Relational Mapping) can offer several advantages:
+
+- The queries can become very complex
+- It's beneficial to know how to use raw SQL
+- Performance
+- Flexibility
+- Efficiency
+- Database-specific features
+- Migration scripts
+
+## To test, use Postman:
 
 - To create a new post with a JSON body in the following format:
 
@@ -38,13 +53,13 @@ To test, use Postman:
 }
 ```
 
-Make a POST request to http://<host>/posts
+Make a POST request to http://< host >/posts
 
-- To get all posts, make a GET request to http://<host>/posts
+- To get all posts, make a GET request to http://< host >/posts
 
-- To get a post by ID, make a GET request to http://<host>/posts/<id>
+- To get a post by ID, make a GET request to http://< host >/posts/< id >
 
-# TODO:
+## TODO:
 
 - Implement a React front end.
   - Visualize the database.
