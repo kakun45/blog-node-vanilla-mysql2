@@ -42,6 +42,12 @@ This is a Blog posts' backend to save/fetch posts to/from a database. You would 
 - Database-specific features
 - Migration scripts
 
+## To start the server:
+
+```
+npx nodemon server.js
+```
+
 ## To test, use Postman:
 
 - To create a new post with a JSON body in the following format:

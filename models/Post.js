@@ -17,7 +17,6 @@ class Post {
     let day = d.getDate();
 
     let createdAtDate = `${year}-${month}-${day}`;
-    console.log(createdAtDate);
 
     let sql_statement = `
     INSERT INTO posts (
@@ -34,11 +33,12 @@ class Post {
     // MUST use '' around strings
     // MUST NOT put the comma at the end of query after: '${createdAtDate}' this crushes the server as invalid SQL syntax.
 
-    // return a SQL statrement to a user as a Promise
+    // return a SQL statement to a user as a Promise
     return db.execute(sql_statement); // save() is no longer async, let's handle await not here
   }
 
-  // no need of instance of the class use: Post.findAll();
+  // no need of instance of the class use:
+  // Post.findAll();
   // V.S.
   // const p = new Post();
   // p.findAll();

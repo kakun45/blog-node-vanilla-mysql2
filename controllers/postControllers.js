@@ -18,8 +18,8 @@ export const createNewPost = async (req, res, next) => {
     // POST to http://<host>/posts
     let { title, body } = req.body; // you got an access to that body bc of middleware express.json() in server.js
     let post = new Post(title, body);
-    post = await post.save(); // save() is async Fn
-    // console.log(post);
+    post = post.save(); // save() is not an async Fn, `await` is not on defenition of it, promise handled elsewhere
+
     // res.send("Created a New Post Route & saved to db");
     res.status(201).json({ message: "Post Created" });
   } catch (error) {

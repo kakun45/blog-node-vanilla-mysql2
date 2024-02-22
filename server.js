@@ -1,5 +1,5 @@
 // require("dotenv").config();
-import dotenv from "dotenv";
+import dotenv from "dotenv"; // ES2020
 dotenv.config();
 
 // In ES2020, you can use the same syntax to achieve the redirection of requests to a specific endpoint: MUST have .js
@@ -15,17 +15,17 @@ app.use(express.json()); // parse json bodies in req objects
 // Redirect req to endpoint starting with /post to postRoutes.js
 app.use("/posts", postRoutes);
 
-// Catch Global error handler with next Fn. IMPORTANT function parems MUST start with err
+// Catch Global error handler with next Fn. IMPORTANT function params MUST start with `err`
 app.use((err, req, res, next) => {
   console.log(err.stack);
   console.log(err.name);
   console.log(err.code);
 
   res.status(500).json({
-    message: "Something went really wrong",
+    message: "Something went really wrong!",
   });
 });
 
 // listen on
 const PORT = process.env.PORT || 3000;
-app.listen(PORT, () => console.log(`Server running on port: ${PORT}`));
+app.listen(PORT, () => console.log(`Server is running on port: ${PORT}`));
